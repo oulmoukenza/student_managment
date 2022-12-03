@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Connexion {
 	
-	public static void main(String[] args) throws SQLException {
+	public static void connect() throws SQLException {
 		
 		String url = "jdbc:mysql://localhost:3306/management?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
 		
@@ -15,11 +15,12 @@ public class Connexion {
 			@SuppressWarnings("unused")
 			Connection connection = DriverManager.getConnection(url, "root","root");
 			// ResultSet
-			System.out.println("connected");
+			
 		
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+		
 		
 	}
 
