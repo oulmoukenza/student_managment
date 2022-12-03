@@ -1,12 +1,13 @@
 package Student_Mgn_app.Student_Mgn_id;
 
 public class Student {
-
+	
+	// id --> unique / 	
 	private int id;
 	private String nom;
 	private String prenom;
 	private String sexe;
-
+	
 	public Student(String nom,String prenom,String sexe) {
 		this.setNom(nom);
 		this.setPrenom(prenom);
