@@ -71,6 +71,7 @@ public class App {
 			System.out.println("\n");
 			
 			System.out.println("Add New Student");
+			InsertInformationStudent();
 			MenuAdmin();
 			break;
 		case 3 : 
@@ -124,8 +125,33 @@ public class App {
 		}
 		
 	}
+	@SuppressWarnings("unused")
 	private static void InsertInformationStudent() {
 		// TODO Auto-generated method stub
+		
+String url = "jdbc:mysql://localhost:3306/management?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			@SuppressWarnings("unused")
+			Connection connection = DriverManager.getConnection(url, "root","root");
+			// ResultSet
+			Statement sql = connection.createStatement();
+			ResultSet result = sql.executeQuery("Insert into Etudiant values (?,?,?,?,?)");
+			
+			while (result.next()) {
+				System.out.println("Student ID : " + result.getInt("Student_ID") + " Nom Etudiant : " + result.getString("nom_etudiant")
+				+ "Prenom Etudiant  : " + result.getString("prenom_etudiant") + " Niveau d'études  : " + result.getString("niveau_etude_etudiant")+
+				" Email Etudiant : " + result.getString("email_etudiant")
+						);
+			}
+			
+			// TimeUnit.SECONDS.sleep(10);
+			System.out.println("\n");
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		
 	}
 
