@@ -7,7 +7,19 @@ public class Student {
 	private String prenom;
 	private String sexe;
 
-	public Student() {}
+	public Student(String nom,String prenom,String sexe) {
+		this.setNom(nom);
+		this.setPrenom(prenom);
+		this.setSexe(sexe);
+	}
+	
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
 	public int getId() {
 		return id;
@@ -17,12 +29,12 @@ public class Student {
 		this.id = id;
 	}
 
-	public String getNom() {
-		return nom;
+	public String getSexe() {
+		return sexe;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setSexe(String sexe) {
+		this.sexe = sexe;
 	}
 
 	public String getPrenom() {
@@ -32,13 +44,9 @@ public class Student {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+	
+	
 
-	public String getSexe() {
-		return sexe;
-	}
-
-	public void setSexe(String sexe) {
-		this.sexe = sexe;
-	}
+	
 
 }

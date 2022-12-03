@@ -12,11 +12,15 @@ public class Connexion {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			@SuppressWarnings("unused")
 			Connection connection = DriverManager.getConnection(url, "root","root");
+			// ResultSet
 			System.out.println("connected");
+		
 		} catch (Exception e) {
-			e.printStackTrace();	
+			System.out.println(e);
 		}
+		
 	}
 
 }
